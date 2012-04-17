@@ -25,6 +25,7 @@ module Airbrake
 
     def call(env)
       puts "CALL"
+      puts env.inspect
       begin
         response = @app.call(env)
       rescue Exception => raised
