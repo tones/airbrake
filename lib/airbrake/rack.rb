@@ -19,10 +19,12 @@ module Airbrake
   # Use a standard Airbrake.configure call to configure your api key.
   class Rack
     def initialize(app)
+      puts "INIT"
       @app = app
     end
 
     def call(env)
+      puts "CALL"
       begin
         response = @app.call(env)
       rescue Exception => raised
